@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1D689AA92E381D80000A9C68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D689A922E381D7F000A9C68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D689A992E381D7F000A9C68;
+			remoteInfo = Arcana;
+		};
+		1D689AB32E381D80000A9C68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D689A922E381D7F000A9C68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D689A992E381D7F000A9C68;
+			remoteInfo = Arcana;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D689A9A2E381D7F000A9C68 /* Arcana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcana.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D689AA82E381D80000A9C68 /* ArcanaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcanaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D689AB22E381D80000A9C68 /* ArcanaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcanaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D689A9C2E381D7F000A9C68 /* Arcana */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Arcana;
+			sourceTree = "<group>";
+		};
+		1D689AAB2E381D80000A9C68 /* ArcanaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ArcanaTests;
+			sourceTree = "<group>";
+		};
+		1D689AB52E381D80000A9C68 /* ArcanaUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ArcanaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D689A972E381D7F000A9C68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D689AA52E381D80000A9C68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D689AAF2E381D80000A9C68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D689A912E381D7F000A9C68 = {
+			isa = PBXGroup;
+			children = (
+				1D689A9C2E381D7F000A9C68 /* Arcana */,
+				1D689AAB2E381D80000A9C68 /* ArcanaTests */,
+				1D689AB52E381D80000A9C68 /* ArcanaUITests */,
+				1D689A9B2E381D7F000A9C68 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D689A9B2E381D7F000A9C68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D689A9A2E381D7F000A9C68 /* Arcana.app */,
+				1D689AA82E381D80000A9C68 /* ArcanaTests.xctest */,
+				1D689AB22E381D80000A9C68 /* ArcanaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D689A992E381D7F000A9C68 /* Arcana */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D689ABC2E381D80000A9C68 /* Build configuration list for PBXNativeTarget "Arcana" */;
+			buildPhases = (
+				1D689A962E381D7F000A9C68 /* Sources */,
+				1D689A972E381D7F000A9C68 /* Frameworks */,
+				1D689A982E381D7F000A9C68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1D689A9C2E381D7F000A9C68 /* Arcana */,
+			);
+			name = Arcana;
+			packageProductDependencies = (
+			);
+			productName = Arcana;
+			productReference = 1D689A9A2E381D7F000A9C68 /* Arcana.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D689AA72E381D80000A9C68 /* ArcanaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D689ABF2E381D80000A9C68 /* Build configuration list for PBXNativeTarget "ArcanaTests" */;
+			buildPhases = (
+				1D689AA42E381D80000A9C68 /* Sources */,
+				1D689AA52E381D80000A9C68 /* Frameworks */,
+				1D689AA62E381D80000A9C68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D689AAA2E381D80000A9C68 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1D689AAB2E381D80000A9C68 /* ArcanaTests */,
+			);
+			name = ArcanaTests;
+			packageProductDependencies = (
+			);
+			productName = ArcanaTests;
+			productReference = 1D689AA82E381D80000A9C68 /* ArcanaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1D689AB12E381D80000A9C68 /* ArcanaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D689AC22E381D80000A9C68 /* Build configuration list for PBXNativeTarget "ArcanaUITests" */;
+			buildPhases = (
+				1D689AAE2E381D80000A9C68 /* Sources */,
+				1D689AAF2E381D80000A9C68 /* Frameworks */,
+				1D689AB02E381D80000A9C68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D689AB42E381D80000A9C68 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1D689AB52E381D80000A9C68 /* ArcanaUITests */,
+			);
+			name = ArcanaUITests;
+			packageProductDependencies = (
+			);
+			productName = ArcanaUITests;
+			productReference = 1D689AB22E381D80000A9C68 /* ArcanaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D689A922E381D7F000A9C68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					1D689A992E381D7F000A9C68 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					1D689AA72E381D80000A9C68 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1D689A992E381D7F000A9C68;
+					};
+					1D689AB12E381D80000A9C68 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1D689A992E381D7F000A9C68;
+					};
+				};
+			};
+			buildConfigurationList = 1D689A952E381D7F000A9C68 /* Build configuration list for PBXProject "Arcana" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D689A912E381D7F000A9C68;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1D689A9B2E381D7F000A9C68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D689A992E381D7F000A9C68 /* Arcana */,
+				1D689AA72E381D80000A9C68 /* ArcanaTests */,
+				1D689AB12E381D80000A9C68 /* ArcanaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D689A982E381D7F000A9C68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D689AA62E381D80000A9C68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D689AB02E381D80000A9C68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D689A962E381D7F000A9C68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D689AA42E381D80000A9C68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D689AAE2E381D80000A9C68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D689AAA2E381D80000A9C68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D689A992E381D7F000A9C68 /* Arcana */;
+			targetProxy = 1D689AA92E381D80000A9C68 /* PBXContainerItemProxy */;
+		};
+		1D689AB42E381D80000A9C68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D689A992E381D7F000A9C68 /* Arcana */;
+			targetProxy = 1D689AB32E381D80000A9C68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D689ABA2E381D80000A9C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D689ABB2E381D80000A9C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		1D689ABD2E381D80000A9C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arcana/Arcana.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spectrallabs.Arcana;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1D689ABE2E381D80000A9C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arcana/Arcana.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spectrallabs.Arcana;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1D689AC02E381D80000A9C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spectrallabs.ArcanaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arcana.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Arcana";
+			};
+			name = Debug;
+		};
+		1D689AC12E381D80000A9C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spectrallabs.ArcanaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arcana.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Arcana";
+			};
+			name = Release;
+		};
+		1D689AC32E381D80000A9C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spectrallabs.ArcanaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Arcana;
+			};
+			name = Debug;
+		};
+		1D689AC42E381D80000A9C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spectrallabs.ArcanaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Arcana;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D689A952E381D7F000A9C68 /* Build configuration list for PBXProject "Arcana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D689ABA2E381D80000A9C68 /* Debug */,
+				1D689ABB2E381D80000A9C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D689ABC2E381D80000A9C68 /* Build configuration list for PBXNativeTarget "Arcana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D689ABD2E381D80000A9C68 /* Debug */,
+				1D689ABE2E381D80000A9C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D689ABF2E381D80000A9C68 /* Build configuration list for PBXNativeTarget "ArcanaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D689AC02E381D80000A9C68 /* Debug */,
+				1D689AC12E381D80000A9C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D689AC22E381D80000A9C68 /* Build configuration list for PBXNativeTarget "ArcanaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D689AC32E381D80000A9C68 /* Debug */,
+				1D689AC42E381D80000A9C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D689A922E381D7F000A9C68 /* Project object */;
+}
