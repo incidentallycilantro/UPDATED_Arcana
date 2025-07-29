@@ -6,78 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		1D689ACA2E381D99000A9C68 /* ArcanaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AC62E381D99000A9C68 /* ArcanaApp.swift */; };
-		1D689ACB2E381D99000A9C68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AC82E381D99000A9C68 /* ContentView.swift */; };
-		1D689ACC2E381D99000A9C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D689AC72E381D99000A9C68 /* Assets.xcassets */; };
-		1D689ACF2E381DAE000A9C68 /* UnifiedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689ACE2E381DAE000A9C68 /* UnifiedTypes.swift */; };
-		1D689AD12E381FD3000A9C68 /* PRISMEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AD02E381FD3000A9C68 /* PRISMEngine.swift */; };
-		1D689AD32E381FE7000A9C68 /* QuantumMemoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AD22E381FE7000A9C68 /* QuantumMemoryManager.swift */; };
-		1D689AD52E38202B000A9C68 /* EnsembleOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AD42E38202B000A9C68 /* EnsembleOrchestrator.swift */; };
-		1D689AD72E382039000A9C68 /* PropietaryPRISMCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AD62E382039000A9C68 /* PropietaryPRISMCore.swift */; };
-		1D689AD92E38204E000A9C68 /* IntelligentModelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AD82E38204E000A9C68 /* IntelligentModelRouter.swift */; };
-		1D689ADB2E382065000A9C68 /* ResponseFusionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689ADA2E382065000A9C68 /* ResponseFusionEngine.swift */; };
-		1D689ADD2E38207E000A9C68 /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689ADC2E38207E000A9C68 /* ResponseValidator.swift */; };
-		1D689ADF2E382095000A9C68 /* ConfidenceCalibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689ADE2E382095000A9C68 /* ConfidenceCalibration.swift */; };
-		1D689AE12E3820AC000A9C68 /* FactCheckingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AE02E3820AC000A9C68 /* FactCheckingEngine.swift */; };
-		1D689AE42E3820FE000A9C68 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AE32E3820FE000A9C68 /* ChatMessage.swift */; };
-		1D689AE62E382114000A9C68 /* ChatThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AE52E382114000A9C68 /* ChatThread.swift */; };
-		1D689AE82E382125000A9C68 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AE72E382125000A9C68 /* Project.swift */; };
-		1D689AEA2E382138000A9C68 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AE92E382138000A9C68 /* ModelManager.swift */; };
-		1D689AEC2E38214F000A9C68 /* WorkspaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AEB2E38214F000A9C68 /* WorkspaceManager.swift */; };
-		1D689AEE2E382172000A9C68 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AED2E382172000A9C68 /* ThreadManager.swift */; };
-		1D689AF02E382183000A9C68 /* WorkspacePersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AEF2E382183000A9C68 /* WorkspacePersistenceController.swift */; };
-		1D689AF22E382192000A9C68 /* TemporalIntelligenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AF12E382192000A9C68 /* TemporalIntelligenceEngine.swift */; };
-		1D689AF52E3821F9000A9C68 /* FluidSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AF42E3821F9000A9C68 /* FluidSidebar.swift */; };
-		1D689AF72E382214000A9C68 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AF62E382214000A9C68 /* ChatView.swift */; };
-		1D689AFA2E38223C000A9C68 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AF92E38223C000A9C68 /* UserSettings.swift */; };
-		1D689AFC2E38225C000A9C68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AFB2E38225C000A9C68 /* SettingsView.swift */; };
-		1D689AFE2E382280000A9C68 /* NewWorkspaceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AFD2E382280000A9C68 /* NewWorkspaceSheet.swift */; };
-		1D689B002E382297000A9C68 /* WorkspaceTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689AFF2E382297000A9C68 /* WorkspaceTypeSelectionView.swift */; };
-		1D689B022E3822A8000A9C68 /* WorkspaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B012E3822A8000A9C68 /* WorkspaceListView.swift */; };
-		1D689B042E3822BA000A9C68 /* ThreadListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B032E3822BA000A9C68 /* ThreadListView.swift */; };
-		1D689B062E38230C000A9C68 /* ArcanaCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B052E38230C000A9C68 /* ArcanaCommands.swift */; };
-		1D689B082E382319000A9C68 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B072E382319000A9C68 /* TimelineView.swift */; };
-		1D689B0A2E38232D000A9C68 /* PerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B092E38232D000A9C68 /* PerformanceDashboard.swift */; };
-		1D689B0C2E38234A000A9C68 /* LocalKnowledgeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B0B2E38234A000A9C68 /* LocalKnowledgeGraph.swift */; };
-		1D689B0E2E38235F000A9C68 /* SemanticMemoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B0D2E38235F000A9C68 /* SemanticMemoryEngine.swift */; };
-		1D689B102E382371000A9C68 /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B0F2E382371000A9C68 /* PerformanceMonitor.swift */; };
-		1D689B122E382382000A9C68 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B112E382382000A9C68 /* FileLoader.swift */; };
-		1D689B142E382390000A9C68 /* MultiModalIntelligence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B132E382390000A9C68 /* MultiModalIntelligence.swift */; };
-		1D689B162E390D17000A9C68 /* IntelligenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B152E390D17000A9C68 /* IntelligenceEngine.swift */; };
-		1D689B182E390D23000A9C68 /* CircadianOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B172E390D23000A9C68 /* CircadianOptimizer.swift */; };
-		1D689B1A2E390D2E000A9C68 /* ContextualAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B192E390D2E000A9C68 /* ContextualAdaptation.swift */; };
-		1D689B1C2E390D58000A9C68 /* ZeroKnowledgePrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B1B2E390D58000A9C68 /* ZeroKnowledgePrivacy.swift */; };
-		1D689B1E2E390D66000A9C68 /* LocalEncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B1D2E390D66000A9C68 /* LocalEncryptionManager.swift */; };
-		1D689B202E390D7E000A9C68 /* MemoryPoisoningEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B1F2E390D7E000A9C68 /* MemoryPoisoningEngine.swift */; };
-		1D689B222E390DBB000A9C68 /* CrossReferenceValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B212E390DBB000A9C68 /* CrossReferenceValidator.swift */; };
-		1D689B242E390DC8000A9C68 /* TemporalCodeIntelligence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B232E390DC8000A9C68 /* TemporalCodeIntelligence.swift */; };
-		1D689B262E390DD4000A9C68 /* SemanticVersioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B252E390DD4000A9C68 /* SemanticVersioning.swift */; };
-		1D689B282E390DE6000A9C68 /* PrivateWebIntelligence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B272E390DE6000A9C68 /* PrivateWebIntelligence.swift */; };
-		1D689B2A2E390DF3000A9C68 /* DistributedSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B292E390DF3000A9C68 /* DistributedSearchEngine.swift */; };
-		1D689B2C2E3919A8000A9C68 /* CodePatternLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B2B2E3919A8000A9C68 /* CodePatternLearning.swift */; };
-		1D689B2E2E3919CA000A9C68 /* LocalKnowledgeCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B2D2E3919CA000A9C68 /* LocalKnowledgeCaching.swift */; };
-		1D689B302E391A7F000A9C68 /* FileValidationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B2F2E391A7F000A9C68 /* FileValidationEngine.swift */; };
-		1D689B322E391A8E000A9C68 /* QuantumStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B312E391A8E000A9C68 /* QuantumStorageManager.swift */; };
-		1D689B342E391AA6000A9C68 /* SemanticCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B332E391AA6000A9C68 /* SemanticCompression.swift */; };
-		1D689B362E391AB8000A9C68 /* TemporalStorageTiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B352E391AB8000A9C68 /* TemporalStorageTiers.swift */; };
-		1D689B382E391ACB000A9C68 /* CrossWorkspaceDeduplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B372E391ACB000A9C68 /* CrossWorkspaceDeduplication.swift */; };
-		1D689B3A2E391ADF000A9C68 /* ResourceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B392E391ADF000A9C68 /* ResourceOptimizer.swift */; };
-		1D689B3C2E391AF0000A9C68 /* BenchmarkingSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B3B2E391AF0000A9C68 /* BenchmarkingSuite.swift */; };
-		1D689B3E2E391B08000A9C68 /* MobileEnsembleOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B3D2E391B08000A9C68 /* MobileEnsembleOptimizer.swift */; };
-		1D689B402E3924FF000A9C68 /* CrossDeviceSynchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B3F2E3924FF000A9C68 /* CrossDeviceSynchronization.swift */; };
-		1D689B422E39250F000A9C68 /* PrivacyFocusedFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B412E39250F000A9C68 /* PrivacyFocusedFeedback.swift */; };
-		1D689B442E392522000A9C68 /* SecureUsageMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B432E392522000A9C68 /* SecureUsageMetrics.swift */; };
-		1D689B462E392548000A9C68 /* PredictiveInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B452E392548000A9C68 /* PredictiveInputController.swift */; };
-		1D689B482E392587000A9C68 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B472E392587000A9C68 /* MainView.swift */; };
-		1D689B4A2E3925B3000A9C68 /* ResponseQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B492E3925B3000A9C68 /* ResponseQuality.swift */; };
-		1D689B4C2E39273C000A9C68 /* ThreadWebSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B4B2E39273C000A9C68 /* ThreadWebSettings.swift */; };
-		1D689B4E2E3927CD000A9C68 /* CodeEvolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B4D2E3927CD000A9C68 /* CodeEvolution.swift */; };
-		1D689B502E3928E7000A9C68 /* MobileIntelligenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B4F2E3928E7000A9C68 /* MobileIntelligenceConfig.swift */; };
-		1D689B522E3929B4000A9C68 /* UXAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B512E3929B4000A9C68 /* UXAnimations.swift */; };
-		1D689B542E392AF9000A9C68 /* SmartToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D689B532E392AF9000A9C68 /* SmartToolController.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		1D689AA92E381D80000A9C68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -99,79 +27,14 @@
 		1D689A9A2E381D7F000A9C68 /* Arcana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D689AA82E381D80000A9C68 /* ArcanaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcanaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D689AB22E381D80000A9C68 /* ArcanaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcanaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D689AC52E381D99000A9C68 /* Arcana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arcana.entitlements; sourceTree = "<group>"; };
-		1D689AC62E381D99000A9C68 /* ArcanaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcanaApp.swift; sourceTree = "<group>"; };
-		1D689AC72E381D99000A9C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1D689AC82E381D99000A9C68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1D689ACE2E381DAE000A9C68 /* UnifiedTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedTypes.swift; sourceTree = "<group>"; };
-		1D689AD02E381FD3000A9C68 /* PRISMEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRISMEngine.swift; sourceTree = "<group>"; };
-		1D689AD22E381FE7000A9C68 /* QuantumMemoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantumMemoryManager.swift; sourceTree = "<group>"; };
-		1D689AD42E38202B000A9C68 /* EnsembleOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnsembleOrchestrator.swift; sourceTree = "<group>"; };
-		1D689AD62E382039000A9C68 /* PropietaryPRISMCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropietaryPRISMCore.swift; sourceTree = "<group>"; };
-		1D689AD82E38204E000A9C68 /* IntelligentModelRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligentModelRouter.swift; sourceTree = "<group>"; };
-		1D689ADA2E382065000A9C68 /* ResponseFusionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFusionEngine.swift; sourceTree = "<group>"; };
-		1D689ADC2E38207E000A9C68 /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
-		1D689ADE2E382095000A9C68 /* ConfidenceCalibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidenceCalibration.swift; sourceTree = "<group>"; };
-		1D689AE02E3820AC000A9C68 /* FactCheckingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCheckingEngine.swift; sourceTree = "<group>"; };
-		1D689AE32E3820FE000A9C68 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
-		1D689AE52E382114000A9C68 /* ChatThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatThread.swift; sourceTree = "<group>"; };
-		1D689AE72E382125000A9C68 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		1D689AE92E382138000A9C68 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
-		1D689AEB2E38214F000A9C68 /* WorkspaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManager.swift; sourceTree = "<group>"; };
-		1D689AED2E382172000A9C68 /* ThreadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
-		1D689AEF2E382183000A9C68 /* WorkspacePersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspacePersistenceController.swift; sourceTree = "<group>"; };
-		1D689AF12E382192000A9C68 /* TemporalIntelligenceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalIntelligenceEngine.swift; sourceTree = "<group>"; };
-		1D689AF42E3821F9000A9C68 /* FluidSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidSidebar.swift; sourceTree = "<group>"; };
-		1D689AF62E382214000A9C68 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		1D689AF92E38223C000A9C68 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		1D689AFB2E38225C000A9C68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		1D689AFD2E382280000A9C68 /* NewWorkspaceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkspaceSheet.swift; sourceTree = "<group>"; };
-		1D689AFF2E382297000A9C68 /* WorkspaceTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceTypeSelectionView.swift; sourceTree = "<group>"; };
-		1D689B012E3822A8000A9C68 /* WorkspaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceListView.swift; sourceTree = "<group>"; };
-		1D689B032E3822BA000A9C68 /* ThreadListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadListView.swift; sourceTree = "<group>"; };
-		1D689B052E38230C000A9C68 /* ArcanaCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcanaCommands.swift; sourceTree = "<group>"; };
-		1D689B072E382319000A9C68 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
-		1D689B092E38232D000A9C68 /* PerformanceDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceDashboard.swift; sourceTree = "<group>"; };
-		1D689B0B2E38234A000A9C68 /* LocalKnowledgeGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKnowledgeGraph.swift; sourceTree = "<group>"; };
-		1D689B0D2E38235F000A9C68 /* SemanticMemoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticMemoryEngine.swift; sourceTree = "<group>"; };
-		1D689B0F2E382371000A9C68 /* PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
-		1D689B112E382382000A9C68 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
-		1D689B132E382390000A9C68 /* MultiModalIntelligence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiModalIntelligence.swift; sourceTree = "<group>"; };
-		1D689B152E390D17000A9C68 /* IntelligenceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligenceEngine.swift; sourceTree = "<group>"; };
-		1D689B172E390D23000A9C68 /* CircadianOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircadianOptimizer.swift; sourceTree = "<group>"; };
-		1D689B192E390D2E000A9C68 /* ContextualAdaptation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextualAdaptation.swift; sourceTree = "<group>"; };
-		1D689B1B2E390D58000A9C68 /* ZeroKnowledgePrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroKnowledgePrivacy.swift; sourceTree = "<group>"; };
-		1D689B1D2E390D66000A9C68 /* LocalEncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEncryptionManager.swift; sourceTree = "<group>"; };
-		1D689B1F2E390D7E000A9C68 /* MemoryPoisoningEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPoisoningEngine.swift; sourceTree = "<group>"; };
-		1D689B212E390DBB000A9C68 /* CrossReferenceValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossReferenceValidator.swift; sourceTree = "<group>"; };
-		1D689B232E390DC8000A9C68 /* TemporalCodeIntelligence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalCodeIntelligence.swift; sourceTree = "<group>"; };
-		1D689B252E390DD4000A9C68 /* SemanticVersioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticVersioning.swift; sourceTree = "<group>"; };
-		1D689B272E390DE6000A9C68 /* PrivateWebIntelligence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateWebIntelligence.swift; sourceTree = "<group>"; };
-		1D689B292E390DF3000A9C68 /* DistributedSearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributedSearchEngine.swift; sourceTree = "<group>"; };
-		1D689B2B2E3919A8000A9C68 /* CodePatternLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePatternLearning.swift; sourceTree = "<group>"; };
-		1D689B2D2E3919CA000A9C68 /* LocalKnowledgeCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKnowledgeCaching.swift; sourceTree = "<group>"; };
-		1D689B2F2E391A7F000A9C68 /* FileValidationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileValidationEngine.swift; sourceTree = "<group>"; };
-		1D689B312E391A8E000A9C68 /* QuantumStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantumStorageManager.swift; sourceTree = "<group>"; };
-		1D689B332E391AA6000A9C68 /* SemanticCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticCompression.swift; sourceTree = "<group>"; };
-		1D689B352E391AB8000A9C68 /* TemporalStorageTiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalStorageTiers.swift; sourceTree = "<group>"; };
-		1D689B372E391ACB000A9C68 /* CrossWorkspaceDeduplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossWorkspaceDeduplication.swift; sourceTree = "<group>"; };
-		1D689B392E391ADF000A9C68 /* ResourceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceOptimizer.swift; sourceTree = "<group>"; };
-		1D689B3B2E391AF0000A9C68 /* BenchmarkingSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkingSuite.swift; sourceTree = "<group>"; };
-		1D689B3D2E391B08000A9C68 /* MobileEnsembleOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileEnsembleOptimizer.swift; sourceTree = "<group>"; };
-		1D689B3F2E3924FF000A9C68 /* CrossDeviceSynchronization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDeviceSynchronization.swift; sourceTree = "<group>"; };
-		1D689B412E39250F000A9C68 /* PrivacyFocusedFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyFocusedFeedback.swift; sourceTree = "<group>"; };
-		1D689B432E392522000A9C68 /* SecureUsageMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUsageMetrics.swift; sourceTree = "<group>"; };
-		1D689B452E392548000A9C68 /* PredictiveInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictiveInputController.swift; sourceTree = "<group>"; };
-		1D689B472E392587000A9C68 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		1D689B492E3925B3000A9C68 /* ResponseQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseQuality.swift; sourceTree = "<group>"; };
-		1D689B4B2E39273C000A9C68 /* ThreadWebSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadWebSettings.swift; sourceTree = "<group>"; };
-		1D689B4D2E3927CD000A9C68 /* CodeEvolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEvolution.swift; sourceTree = "<group>"; };
-		1D689B4F2E3928E7000A9C68 /* MobileIntelligenceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileIntelligenceConfig.swift; sourceTree = "<group>"; };
-		1D689B512E3929B4000A9C68 /* UXAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXAnimations.swift; sourceTree = "<group>"; };
-		1D689B532E392AF9000A9C68 /* SmartToolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartToolController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		1D689A9C2E381D7F000A9C68 /* Arcana */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Arcana;
+			sourceTree = "<group>";
+		};
 		1D689AAB2E381D80000A9C68 /* ArcanaTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ArcanaTests;
@@ -212,7 +75,7 @@
 		1D689A912E381D7F000A9C68 = {
 			isa = PBXGroup;
 			children = (
-				1D689AC92E381D99000A9C68 /* Arcana */,
+				1D689A9C2E381D7F000A9C68 /* Arcana */,
 				1D689AAB2E381D80000A9C68 /* ArcanaTests */,
 				1D689AB52E381D80000A9C68 /* ArcanaUITests */,
 				1D689A9B2E381D7F000A9C68 /* Products */,
@@ -229,115 +92,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D689AC92E381D99000A9C68 /* Arcana */ = {
-			isa = PBXGroup;
-			children = (
-				1D689AF82E382238000A9C68 /* Helpers */,
-				1D689AF32E3821F2000A9C68 /* Views */,
-				1D689AE22E3820C4000A9C68 /* Models */,
-				1D689ACD2E381D9C000A9C68 /* Core */,
-				1D689AC52E381D99000A9C68 /* Arcana.entitlements */,
-				1D689AC62E381D99000A9C68 /* ArcanaApp.swift */,
-				1D689AC72E381D99000A9C68 /* Assets.xcassets */,
-				1D689AC82E381D99000A9C68 /* ContentView.swift */,
-			);
-			path = Arcana;
-			sourceTree = "<group>";
-		};
-		1D689ACD2E381D9C000A9C68 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				1D689ACE2E381DAE000A9C68 /* UnifiedTypes.swift */,
-				1D689AD02E381FD3000A9C68 /* PRISMEngine.swift */,
-				1D689AD22E381FE7000A9C68 /* QuantumMemoryManager.swift */,
-				1D689AD42E38202B000A9C68 /* EnsembleOrchestrator.swift */,
-				1D689AD62E382039000A9C68 /* PropietaryPRISMCore.swift */,
-				1D689AD82E38204E000A9C68 /* IntelligentModelRouter.swift */,
-				1D689ADA2E382065000A9C68 /* ResponseFusionEngine.swift */,
-				1D689ADC2E38207E000A9C68 /* ResponseValidator.swift */,
-				1D689ADE2E382095000A9C68 /* ConfidenceCalibration.swift */,
-				1D689AE02E3820AC000A9C68 /* FactCheckingEngine.swift */,
-				1D689AE92E382138000A9C68 /* ModelManager.swift */,
-				1D689AEB2E38214F000A9C68 /* WorkspaceManager.swift */,
-				1D689AED2E382172000A9C68 /* ThreadManager.swift */,
-				1D689AEF2E382183000A9C68 /* WorkspacePersistenceController.swift */,
-				1D689AF12E382192000A9C68 /* TemporalIntelligenceEngine.swift */,
-				1D689B052E38230C000A9C68 /* ArcanaCommands.swift */,
-				1D689B0B2E38234A000A9C68 /* LocalKnowledgeGraph.swift */,
-				1D689B0D2E38235F000A9C68 /* SemanticMemoryEngine.swift */,
-				1D689B0F2E382371000A9C68 /* PerformanceMonitor.swift */,
-				1D689B132E382390000A9C68 /* MultiModalIntelligence.swift */,
-				1D689B152E390D17000A9C68 /* IntelligenceEngine.swift */,
-				1D689B172E390D23000A9C68 /* CircadianOptimizer.swift */,
-				1D689B192E390D2E000A9C68 /* ContextualAdaptation.swift */,
-				1D689B1B2E390D58000A9C68 /* ZeroKnowledgePrivacy.swift */,
-				1D689B1D2E390D66000A9C68 /* LocalEncryptionManager.swift */,
-				1D689B1F2E390D7E000A9C68 /* MemoryPoisoningEngine.swift */,
-				1D689B212E390DBB000A9C68 /* CrossReferenceValidator.swift */,
-				1D689B232E390DC8000A9C68 /* TemporalCodeIntelligence.swift */,
-				1D689B252E390DD4000A9C68 /* SemanticVersioning.swift */,
-				1D689B272E390DE6000A9C68 /* PrivateWebIntelligence.swift */,
-				1D689B292E390DF3000A9C68 /* DistributedSearchEngine.swift */,
-				1D689B2B2E3919A8000A9C68 /* CodePatternLearning.swift */,
-				1D689B2D2E3919CA000A9C68 /* LocalKnowledgeCaching.swift */,
-				1D689B2F2E391A7F000A9C68 /* FileValidationEngine.swift */,
-				1D689B312E391A8E000A9C68 /* QuantumStorageManager.swift */,
-				1D689B332E391AA6000A9C68 /* SemanticCompression.swift */,
-				1D689B352E391AB8000A9C68 /* TemporalStorageTiers.swift */,
-				1D689B372E391ACB000A9C68 /* CrossWorkspaceDeduplication.swift */,
-				1D689B392E391ADF000A9C68 /* ResourceOptimizer.swift */,
-				1D689B3B2E391AF0000A9C68 /* BenchmarkingSuite.swift */,
-				1D689B3D2E391B08000A9C68 /* MobileEnsembleOptimizer.swift */,
-				1D689B3F2E3924FF000A9C68 /* CrossDeviceSynchronization.swift */,
-				1D689B412E39250F000A9C68 /* PrivacyFocusedFeedback.swift */,
-				1D689B432E392522000A9C68 /* SecureUsageMetrics.swift */,
-				1D689B452E392548000A9C68 /* PredictiveInputController.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		1D689AE22E3820C4000A9C68 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1D689AE32E3820FE000A9C68 /* ChatMessage.swift */,
-				1D689AE52E382114000A9C68 /* ChatThread.swift */,
-				1D689AE72E382125000A9C68 /* Project.swift */,
-				1D689B492E3925B3000A9C68 /* ResponseQuality.swift */,
-				1D689B4B2E39273C000A9C68 /* ThreadWebSettings.swift */,
-				1D689B4D2E3927CD000A9C68 /* CodeEvolution.swift */,
-				1D689B4F2E3928E7000A9C68 /* MobileIntelligenceConfig.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		1D689AF32E3821F2000A9C68 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1D689AF42E3821F9000A9C68 /* FluidSidebar.swift */,
-				1D689AF62E382214000A9C68 /* ChatView.swift */,
-				1D689AFB2E38225C000A9C68 /* SettingsView.swift */,
-				1D689AFD2E382280000A9C68 /* NewWorkspaceSheet.swift */,
-				1D689AFF2E382297000A9C68 /* WorkspaceTypeSelectionView.swift */,
-				1D689B012E3822A8000A9C68 /* WorkspaceListView.swift */,
-				1D689B032E3822BA000A9C68 /* ThreadListView.swift */,
-				1D689B072E382319000A9C68 /* TimelineView.swift */,
-				1D689B092E38232D000A9C68 /* PerformanceDashboard.swift */,
-				1D689B472E392587000A9C68 /* MainView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1D689AF82E382238000A9C68 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				1D689AF92E38223C000A9C68 /* UserSettings.swift */,
-				1D689B112E382382000A9C68 /* FileLoader.swift */,
-				1D689B512E3929B4000A9C68 /* UXAnimations.swift */,
-				1D689B532E392AF9000A9C68 /* SmartToolController.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +106,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1D689A9C2E381D7F000A9C68 /* Arcana */,
 			);
 			name = Arcana;
 			packageProductDependencies = (
@@ -455,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D689ACC2E381D99000A9C68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,74 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D689ADF2E382095000A9C68 /* ConfidenceCalibration.swift in Sources */,
-				1D689B1A2E390D2E000A9C68 /* ContextualAdaptation.swift in Sources */,
-				1D689B382E391ACB000A9C68 /* CrossWorkspaceDeduplication.swift in Sources */,
-				1D689AF02E382183000A9C68 /* WorkspacePersistenceController.swift in Sources */,
-				1D689B462E392548000A9C68 /* PredictiveInputController.swift in Sources */,
-				1D689B542E392AF9000A9C68 /* SmartToolController.swift in Sources */,
-				1D689B1C2E390D58000A9C68 /* ZeroKnowledgePrivacy.swift in Sources */,
-				1D689B042E3822BA000A9C68 /* ThreadListView.swift in Sources */,
-				1D689B402E3924FF000A9C68 /* CrossDeviceSynchronization.swift in Sources */,
-				1D689AE62E382114000A9C68 /* ChatThread.swift in Sources */,
-				1D689B2A2E390DF3000A9C68 /* DistributedSearchEngine.swift in Sources */,
-				1D689AD92E38204E000A9C68 /* IntelligentModelRouter.swift in Sources */,
-				1D689AF72E382214000A9C68 /* ChatView.swift in Sources */,
-				1D689B182E390D23000A9C68 /* CircadianOptimizer.swift in Sources */,
-				1D689AE42E3820FE000A9C68 /* ChatMessage.swift in Sources */,
-				1D689B022E3822A8000A9C68 /* WorkspaceListView.swift in Sources */,
-				1D689B202E390D7E000A9C68 /* MemoryPoisoningEngine.swift in Sources */,
-				1D689B2C2E3919A8000A9C68 /* CodePatternLearning.swift in Sources */,
-				1D689B3E2E391B08000A9C68 /* MobileEnsembleOptimizer.swift in Sources */,
-				1D689B262E390DD4000A9C68 /* SemanticVersioning.swift in Sources */,
-				1D689B002E382297000A9C68 /* WorkspaceTypeSelectionView.swift in Sources */,
-				1D689B362E391AB8000A9C68 /* TemporalStorageTiers.swift in Sources */,
-				1D689B122E382382000A9C68 /* FileLoader.swift in Sources */,
-				1D689AD72E382039000A9C68 /* PropietaryPRISMCore.swift in Sources */,
-				1D689B422E39250F000A9C68 /* PrivacyFocusedFeedback.swift in Sources */,
-				1D689AF52E3821F9000A9C68 /* FluidSidebar.swift in Sources */,
-				1D689B3C2E391AF0000A9C68 /* BenchmarkingSuite.swift in Sources */,
-				1D689ACF2E381DAE000A9C68 /* UnifiedTypes.swift in Sources */,
-				1D689AFC2E38225C000A9C68 /* SettingsView.swift in Sources */,
-				1D689B142E382390000A9C68 /* MultiModalIntelligence.swift in Sources */,
-				1D689B242E390DC8000A9C68 /* TemporalCodeIntelligence.swift in Sources */,
-				1D689B082E382319000A9C68 /* TimelineView.swift in Sources */,
-				1D689AEC2E38214F000A9C68 /* WorkspaceManager.swift in Sources */,
-				1D689B502E3928E7000A9C68 /* MobileIntelligenceConfig.swift in Sources */,
-				1D689AD12E381FD3000A9C68 /* PRISMEngine.swift in Sources */,
-				1D689B3A2E391ADF000A9C68 /* ResourceOptimizer.swift in Sources */,
-				1D689ACA2E381D99000A9C68 /* ArcanaApp.swift in Sources */,
-				1D689B442E392522000A9C68 /* SecureUsageMetrics.swift in Sources */,
-				1D689B0C2E38234A000A9C68 /* LocalKnowledgeGraph.swift in Sources */,
-				1D689B062E38230C000A9C68 /* ArcanaCommands.swift in Sources */,
-				1D689AE82E382125000A9C68 /* Project.swift in Sources */,
-				1D689B342E391AA6000A9C68 /* SemanticCompression.swift in Sources */,
-				1D689B4A2E3925B3000A9C68 /* ResponseQuality.swift in Sources */,
-				1D689B302E391A7F000A9C68 /* FileValidationEngine.swift in Sources */,
-				1D689B522E3929B4000A9C68 /* UXAnimations.swift in Sources */,
-				1D689AEA2E382138000A9C68 /* ModelManager.swift in Sources */,
-				1D689B282E390DE6000A9C68 /* PrivateWebIntelligence.swift in Sources */,
-				1D689B102E382371000A9C68 /* PerformanceMonitor.swift in Sources */,
-				1D689B2E2E3919CA000A9C68 /* LocalKnowledgeCaching.swift in Sources */,
-				1D689ADD2E38207E000A9C68 /* ResponseValidator.swift in Sources */,
-				1D689AFA2E38223C000A9C68 /* UserSettings.swift in Sources */,
-				1D689AD32E381FE7000A9C68 /* QuantumMemoryManager.swift in Sources */,
-				1D689B222E390DBB000A9C68 /* CrossReferenceValidator.swift in Sources */,
-				1D689B1E2E390D66000A9C68 /* LocalEncryptionManager.swift in Sources */,
-				1D689AEE2E382172000A9C68 /* ThreadManager.swift in Sources */,
-				1D689ADB2E382065000A9C68 /* ResponseFusionEngine.swift in Sources */,
-				1D689AF22E382192000A9C68 /* TemporalIntelligenceEngine.swift in Sources */,
-				1D689B0A2E38232D000A9C68 /* PerformanceDashboard.swift in Sources */,
-				1D689B4E2E3927CD000A9C68 /* CodeEvolution.swift in Sources */,
-				1D689B0E2E38235F000A9C68 /* SemanticMemoryEngine.swift in Sources */,
-				1D689AFE2E382280000A9C68 /* NewWorkspaceSheet.swift in Sources */,
-				1D689B4C2E39273C000A9C68 /* ThreadWebSettings.swift in Sources */,
-				1D689AD52E38202B000A9C68 /* EnsembleOrchestrator.swift in Sources */,
-				1D689ACB2E381D99000A9C68 /* ContentView.swift in Sources */,
-				1D689B322E391A8E000A9C68 /* QuantumStorageManager.swift in Sources */,
-				1D689B482E392587000A9C68 /* MainView.swift in Sources */,
-				1D689AE12E3820AC000A9C68 /* FactCheckingEngine.swift in Sources */,
-				1D689B162E390D17000A9C68 /* IntelligenceEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
