@@ -7,7 +7,7 @@ import Foundation
 import OSLog
 
 @MainActor
-class SemanticMemoryEngine: ObservableObject {
+public class SemanticMemoryEngine: ObservableObject {
     private let logger = Logger(subsystem: "com.spectrallabs.arcana", category: "SemanticMemory")
     private var embeddings: [String: [Float]] = [:]
     private var semanticClusters: [SemanticCluster] = []

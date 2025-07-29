@@ -15,6 +15,7 @@ struct ChatThread: Codable, Hashable, Identifiable {
     let createdAt: Date
     let updatedAt: Date
     let metadata: ThreadMetadata?
+    public let creationDate: Date
     
     init(
         id: UUID = UUID(),

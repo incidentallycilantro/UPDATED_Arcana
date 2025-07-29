@@ -8,6 +8,7 @@ import Combine
 import OSLog
 
 @MainActor
+
 class UserSettings: ObservableObject {
     static let shared = UserSettings()
     

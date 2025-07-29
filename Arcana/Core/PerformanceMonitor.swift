@@ -8,11 +8,13 @@ import OSLog
 
 @MainActor
 class PerformanceMonitor: ObservableObject {
+    static let shared = PerformanceMonitor()
     private let logger = Logger(subsystem: "com.spectrallabs.arcana", category: "PerformanceMonitor")
     
     @Published var currentMetrics = PerformanceMetrics()
     @Published var historicalData: [PerformanceSnapshot] = []
     @Published var alerts: [PerformanceAlert] = []
+    @Published public var systemHealth: SystemHealth
     
     private var monitoringTimer: Timer?
     

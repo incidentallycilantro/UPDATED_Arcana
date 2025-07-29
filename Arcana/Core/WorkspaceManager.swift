@@ -9,6 +9,7 @@ import OSLog
 
 @MainActor
 class WorkspaceManager: ObservableObject {
+    static let shared = WorkspaceManager()
     @Published var workspaces: [Project] = []
     @Published var currentWorkspace: Project?
     @Published var isLoading = false

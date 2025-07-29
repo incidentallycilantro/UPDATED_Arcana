@@ -235,7 +235,7 @@ struct UserPreferences: Codable, Hashable {
 }
 
 /// Response style preferences
-enum ResponseStyle: String, Codable, CaseIterable, Hashable {
+public enum ResponseStyle: String, Codable, CaseIterable, Hashable {
     case concise = "concise"
     case balanced = "balanced"
     case detailed = "detailed"
@@ -260,7 +260,7 @@ enum TechnicalLevel: String, Codable, CaseIterable, Hashable {
 }
 
 /// Creativity level preferences
-enum CreativityLevel: String, Codable, CaseIterable, Hashable {
+public enum CreativityLevel: String, Codable, CaseIterable, Hashable {
     case conservative = "conservative"
     case balanced = "balanced"
     case creative = "creative"
@@ -268,7 +268,7 @@ enum CreativityLevel: String, Codable, CaseIterable, Hashable {
 }
 
 /// Privacy level settings
-enum PrivacyLevel: String, Codable, CaseIterable, Hashable {
+public enum PrivacyLevel: String, Codable, CaseIterable, Hashable {
     case maximum = "maximum"
     case balanced = "balanced"
     case performance = "performance"
@@ -285,7 +285,7 @@ enum PrivacyLevel: String, Codable, CaseIterable, Hashable {
 // MARK: - Web Research Types
 
 /// Search engine preferences
-enum SearchEnginePreference: String, Codable, CaseIterable, Hashable {
+public enum SearchEnginePreference: String, Codable, CaseIterable, Hashable {
     case automatic = "automatic"
     case privacyOnly = "privacyOnly"
     case custom = "custom"
@@ -300,7 +300,7 @@ enum SearchEnginePreference: String, Codable, CaseIterable, Hashable {
 }
 
 /// Available search engines
-enum SearchEngine: String, Codable, CaseIterable, Hashable {
+public enum SearchEngine: String, Codable, CaseIterable, Hashable {
     case duckDuckGo = "duckDuckGo"
     case searx = "searx"
     case startPage = "startPage"
@@ -456,7 +456,7 @@ enum StorageLimit: String, Codable, CaseIterable, Hashable {
 }
 
 /// Data retention periods
-enum RetentionPeriod: String, Codable, CaseIterable, Hashable {
+public enum RetentionPeriod: String, Codable, CaseIterable, Hashable {
     case sevenDays = "sevenDays"
     case thirtyDays = "thirtyDays"
     case ninetyDays = "ninetyDays"
@@ -883,30 +883,5 @@ enum LoadingState<T> {
         case .error(let error): return error
         default: return nil
         }
-    }
-}
-
-// MARK: - Forward Declarations
-
-/// Forward declaration for ChatMessage (defined in Models/ChatMessage.swift)
-struct ChatMessage: Codable, Hashable, Identifiable {
-    let id: UUID
-    let role: MessageRole
-    let content: String
-    let timestamp: Date
-    let threadId: UUID
-    let workspaceId: UUID
-    let confidence: Double?
-    let metadata: [String: String]?
-    
-    init(id: UUID = UUID(), role: MessageRole, content: String, threadId: UUID, workspaceId: UUID, confidence: Double? = nil, metadata: [String: String]? = nil) {
-        self.id = id
-        self.role = role
-        self.content = content
-        self.timestamp = Date()
-        self.threadId = threadId
-        self.workspaceId = workspaceId
-        self.confidence = confidence
-        self.metadata = metadata
     }
 }

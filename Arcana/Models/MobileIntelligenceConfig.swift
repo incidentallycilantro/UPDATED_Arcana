@@ -2251,4 +2251,16 @@ public struct GestureRecognitionConfig: Codable, Hashable {
 }
 
 /// Haptic feedback configuration
-public struct HapticFeedbackConfig: Codable, Hashable
+public struct HapticFeedbackConfig: Codable, Hashable {
+    public var enabled: Bool
+    public var intensity: HapticIntensity
+    public var contextualFeedback: Bool
+    public var customPatterns: [HapticPattern]
+    
+    public init(enabled: Bool = true, intensity: HapticIntensity = .medium, contextualFeedback: Bool = true, customPatterns: [HapticPattern] = []) {
+        self.enabled = enabled
+        self.intensity = intensity
+        self.contextualFeedback = contextualFeedback
+        self.customPatterns = customPatterns
+    }
+}

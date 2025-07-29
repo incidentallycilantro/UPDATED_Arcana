@@ -671,35 +671,6 @@ struct DetailRow: View {
     }
 }
 
-// MARK: - Enums
-
-enum SidebarItem: String, CaseIterable, Identifiable {
-    case workspaces = "workspaces"
-    case threads = "threads"
-    case search = "search"
-    case settings = "settings"
-    
-    var id: String { rawValue }
-    
-    var displayName: String {
-        switch self {
-        case .workspaces: return "Workspaces"
-        case .threads: return "Threads"
-        case .search: return "Search"
-        case .settings: return "Settings"
-        }
-    }
-    
-    var icon: String {
-        switch self {
-        case .workspaces: return "folder"
-        case .threads: return "message"
-        case .search: return "magnifyingglass"
-        case .settings: return "gearshape"
-        }
-    }
-}
-
 // MARK: - Preview
 
 #Preview {

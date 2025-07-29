@@ -650,21 +650,6 @@ public enum ContentFilterLevel: String, Codable, CaseIterable, Hashable {
     }
 }
 
-/// Content types
-public enum ContentType: String, Codable, CaseIterable, Hashable {
-    case text = "text"
-    case code = "code"
-    case academic = "academic"
-    case news = "news"
-    case reference = "reference"
-    case creative = "creative"
-    case technical = "technical"
-    
-    public var displayName: String {
-        return rawValue.capitalized
-    }
-}
-
 /// Topic filters
 public struct TopicFilter: Codable, Hashable {
     public let topic: String
@@ -1012,25 +997,6 @@ public struct PerformanceOptimization: Codable, Hashable {
         self.type = type
         self.description = description
         self.expectedSpeedup = expectedSpeedup
-    }
-}
-
-/// Optimization types
-public enum OptimizationType: String, Codable, CaseIterable, Hashable {
-    case enablePredictiveLoading = "enablePredictiveLoading"
-    case adjustQualitySpeedBalance = "adjustQualitySpeedBalance"
-    case optimizeEnsembleMode = "optimizeEnsembleMode"
-    case enableBackgroundProcessing = "enableBackgroundProcessing"
-    case reduceCacheSize = "reduceCacheSize"
-    
-    public var displayName: String {
-        switch self {
-        case .enablePredictiveLoading: return "Enable Predictive Loading"
-        case .adjustQualitySpeedBalance: return "Adjust Quality/Speed Balance"
-        case .optimizeEnsembleMode: return "Optimize Ensemble Mode"
-        case .enableBackgroundProcessing: return "Enable Background Processing"
-        case .reduceCacheSize: return "Reduce Cache Size"
-        }
     }
 }
 

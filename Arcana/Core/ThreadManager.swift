@@ -9,6 +9,7 @@ import OSLog
 
 @MainActor
 class ThreadManager: ObservableObject {
+    static let shared = ThreadManager()
     @Published var threads: [ChatThread] = []
     @Published var currentThread: ChatThread?
     @Published var isLoading = false

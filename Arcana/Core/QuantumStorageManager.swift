@@ -695,67 +695,6 @@ private class SemanticCompressionEngine {
     }
 }
 
-// MARK: - Temporal Storage Tiers
-
-/// Manages different storage tiers based on data age and access patterns
-private class TemporalStorageTiers {
-    
-    private let storageDirectory: URL
-    private var tierDirectories: [StorageTier: URL] = [:]
-    
-    init(storageDirectory: URL) {
-        self.storageDirectory = storageDirectory
-    }
-    
-    func initialize() async {
-        for tier in StorageTier.allCases {
-            let tierURL = storageDirectory.appendingPathComponent(tier.rawValue)
-            tierDirectories[tier] = tierURL
-            
-            do {
-                try FileManager.default.createDirectory(at: tierURL, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print("⚠️ Failed to create tier directory \(tier): \(error)")
-            }
-        }
-    }
-    
-    func determineTier(for metadata: StorageMetadata) -> StorageTier {
-        switch metadata.priority {
-        case .critical:
-            return .hot
-        case .high:
-            return .warm
-        case .medium:
-            return .cool
-        case .low:
-            return .cold
-        }
-    }
-    
-    func shouldMigrateTier(_ entry: StorageEntry) -> Bool {
-        let daysSinceAccess = Date().timeIntervalSince(entry.lastAccessed) / (24 * 60 * 60)
-        let currentTier = entry.storageTier
-        
-        // Migration rules
-        switch currentTier {
-        case .hot:
-            return daysSinceAccess > 7 // Move to warm after a week
-        case .warm:
-            return daysSinceAccess > 30 // Move to cool after a month
-        case .cool:
-            return daysSinceAccess > 90 // Move to cold after 3 months
-        case .cold:
-            return false // Already in coldest tier
-        }
-    }
-    
-    func reorganize() async {
-        // Implementation for reorganizing storage tiers
-        // This would move data between tiers based on access patterns
-    }
-}
-
 // MARK: - Supporting Types
 
 /// Storage entry in the quantum storage system

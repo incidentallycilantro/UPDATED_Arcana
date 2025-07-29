@@ -503,8 +503,8 @@ public enum FeedbackError: Error, LocalizedError {
 
 private extension Substring {
     var string: String { String(self) }
-}eedbackConfiguration()
-        
+    saveFeedbackConfiguration()
+    
         // Regenerate anonymous ID if privacy level increased
         if level == .maximum {
             generateAnonymousUserID()

@@ -16,6 +16,7 @@ struct Project: Codable, Hashable, Identifiable {
     let status: ProjectStatus
     let settings: ProjectSettings
     let statistics: ProjectStatistics
+    public let creationDate: Date
     
     init(
         id: UUID = UUID(),
