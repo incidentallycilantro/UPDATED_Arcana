@@ -94,10 +94,11 @@ struct MainView: View {
     private var sidebarView: some View {
         FluidSidebar(
             selectedItem: $selectedSidebarItem,
-            showingNewWorkspaceSheet: $showingNewWorkspaceSheet,
-            showingSettingsSheet: $showingSettingsSheet
+            onNewWorkspace: { showingNewWorkspaceSheet = true },
+            onShowSettings: { showingSettingsSheet = true },
+            onShowPerformance: { showingPerformanceDashboard = true }
         )
-        .background(Color(NSColor.sidebarBackgroundColor))
+        .background(Color(NSColor.controlBackgroundColor))
         .overlay(
             Rectangle()
                 .frame(width: 1)
@@ -124,7 +125,7 @@ struct MainView: View {
             ZStack {
                 if let currentWorkspace = workspaceManager.currentWorkspace {
                     // Chat interface for active workspace
-                    ChatView(workspace: currentWorkspace)
+                    ChatView()
                         .id(currentWorkspace.id)
                         .transition(layoutTransition)
                         .animation(.spring(response: 0.5, dampingFraction: 0.8), value: currentWorkspace.id)
@@ -243,12 +244,13 @@ struct MainView: View {
         case .good: return .blue
         case .fair: return .orange
         case .poor: return .red
+        case .critical: return .red
         }
     }
     
     private var performanceIndicatorText: String {
         let metrics = performanceMonitor.currentMetrics
-        return String(format: "%.0f%% CPU", metrics.cpuUsage)
+        return String(format: "%.0f%% CPU", metrics.cpuUsage * 100)
     }
     
     // MARK: - Welcome View
@@ -292,7 +294,9 @@ struct MainView: View {
                             color: workspaceType.color,
                             description: getWorkspaceDescription(workspaceType)
                         ) {
-                            createWorkspace(type: workspaceType)
+                            Task {
+                                await createWorkspace(type: workspaceType)
+                            }
                         }
                     }
                 }
@@ -380,7 +384,7 @@ struct MainView: View {
                 .padding(16)
             }
         }
-        .background(Color(NSColor.sidebarBackgroundColor))
+        .background(Color(NSColor.controlBackgroundColor))
         .overlay(
             Rectangle()
                 .frame(width: 1)
@@ -448,14 +452,21 @@ struct MainView: View {
         }
     }
     
-    private func createWorkspace(type: WorkspaceType) {
-        withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
-            let workspace = workspaceManager.createWorkspace(
+    private func createWorkspace(type: WorkspaceType) async {
+        do {
+            let workspace = try await workspaceManager.createWorkspace(
                 name: "\(type.displayName) Workspace",
                 type: type,
                 description: getWorkspaceDescription(type)
             )
-            workspaceManager.selectWorkspace(workspace)
+            
+            await MainActor.run {
+                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                    workspaceManager.selectWorkspace(workspace)
+                }
+            }
+        } catch {
+            print("Failed to create workspace: \(error)")
         }
     }
     
@@ -475,14 +486,26 @@ struct MainView: View {
     private func createNewThread() {
         guard let workspace = workspaceManager.currentWorkspace else { return }
         
-        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-            let thread = threadManager.createThread(in: workspace)
-            threadManager.selectThread(thread)
+        Task {
+            do {
+                let thread = try await threadManager.createThread(
+                    title: "New Thread",
+                    workspaceId: workspace.id,
+                    workspaceType: workspace.workspaceType
+                )
+                
+                await MainActor.run {
+                    withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                        threadManager.selectThread(thread)
+                    }
+                }
+            } catch {
+                print("Failed to create thread: \(error)")
+            }
         }
     }
     
     private func toggleTimelineView() {
-        // Toggle timeline view implementation
         userSettings.showTimelineView.toggle()
     }
     
@@ -640,7 +663,7 @@ struct PerformanceDetailsSection: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 DetailRow(label: "System Health", value: performanceMonitor.systemHealth.displayName)
-                DetailRow(label: "CPU Usage", value: String(format: "%.1f%%", performanceMonitor.currentMetrics.cpuUsage))
+                DetailRow(label: "CPU Usage", value: String(format: "%.1f%%", performanceMonitor.currentMetrics.cpuUsage * 100))
                 DetailRow(label: "Memory", value: ByteCountFormatter.string(fromByteCount: performanceMonitor.currentMetrics.memoryUsage, countStyle: .memory))
                 DetailRow(label: "Inference Time", value: String(format: "%.2fs", performanceMonitor.currentMetrics.inferenceTime))
             }
@@ -668,6 +691,64 @@ struct DetailRow: View {
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.trailing)
         }
+    }
+}
+
+// MARK: - Stub Views (need to be implemented)
+
+struct NewWorkspaceSheet: View {
+    var body: some View {
+        Text("New Workspace Sheet - To be implemented")
+            .frame(width: 400, height: 300)
+    }
+}
+
+struct SettingsView: View {
+    var body: some View {
+        Text("Settings View - To be implemented")
+            .frame(width: 600, height: 500)
+    }
+}
+
+struct PerformanceDashboard: View {
+    var body: some View {
+        Text("Performance Dashboard - To be implemented")
+            .frame(width: 800, height: 600)
+    }
+}
+
+struct FluidSidebar: View {
+    @Binding var selectedItem: SidebarItem
+    let onNewWorkspace: () -> Void
+    let onShowSettings: () -> Void
+    let onShowPerformance: () -> Void
+    
+    var body: some View {
+        VStack {
+            Text("Fluid Sidebar - To be implemented")
+            Spacer()
+            
+            // Temporary buttons for functionality
+            VStack(spacing: 8) {
+                Button("New Workspace", action: onNewWorkspace)
+                    .buttonStyle(.borderless)
+                Button("Settings", action: onShowSettings)
+                    .buttonStyle(.borderless)
+                Button("Performance", action: onShowPerformance)
+                    .buttonStyle(.borderless)
+            }
+        }
+        .padding()
+    }
+}
+
+struct ChatView: View {
+    var body: some View {
+        VStack {
+            Text("Chat View - To be implemented")
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

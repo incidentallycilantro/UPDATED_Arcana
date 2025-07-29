@@ -3,6 +3,10 @@
 // Arcana
 //
 
+import Foundation
+import Combine
+import os.log
+
 @MainActor
 class FactCheckingEngine: ObservableObject {
     private let logger = Logger(subsystem: "com.spectrallabs.arcana", category: "FactChecking")

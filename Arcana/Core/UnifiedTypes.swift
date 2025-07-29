@@ -222,14 +222,14 @@ struct UserPreferences: Codable, Hashable {
     let responseStyle: ResponseStyle
     let verbosity: VerbosityLevel
     let technicalLevel: TechnicalLevel
-    let creativityPreference: CreativityLevel
+    let creativityLevel: CreativityLevel
     let privacyLevel: PrivacyLevel
     
-    init(responseStyle: ResponseStyle = .balanced, verbosity: VerbosityLevel = .medium, technicalLevel: TechnicalLevel = .intermediate, creativityPreference: CreativityLevel = .balanced, privacyLevel: PrivacyLevel = .maximum) {
+    init(responseStyle: ResponseStyle = .balanced, verbosity: VerbosityLevel = .medium, technicalLevel: TechnicalLevel = .intermediate, creativityLevel: CreativityLevel = .balanced, privacyLevel: PrivacyLevel = .maximum) {
         self.responseStyle = responseStyle
         self.verbosity = verbosity
         self.technicalLevel = technicalLevel
-        self.creativityPreference = creativityPreference
+        self.creativityLevel = creativityLevel
         self.privacyLevel = privacyLevel
     }
 }
@@ -750,6 +750,218 @@ enum FeatureCategory: String, Codable, CaseIterable, Hashable {
     case integration = "integration"
 }
 
+// MARK: - MISSING TYPES - Added to fix compilation errors
+
+/// System health enumeration - ADDED to fix PerformanceMonitor compilation
+enum SystemHealth: String, Codable, CaseIterable, Hashable {
+    case excellent = "excellent"
+    case good = "good"
+    case fair = "fair"
+    case poor = "poor"
+    case critical = "critical"
+    
+    var displayName: String {
+        switch self {
+        case .excellent: return "Excellent"
+        case .good: return "Good"
+        case .fair: return "Fair"
+        case .poor: return "Poor"
+        case .critical: return "Critical"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .excellent: return .green
+        case .good: return .blue
+        case .fair: return .yellow
+        case .poor: return .orange
+        case .critical: return .red
+        }
+    }
+    
+    var priority: Int {
+        switch self {
+        case .excellent: return 0
+        case .good: return 1
+        case .fair: return 2
+        case .poor: return 3
+        case .critical: return 4
+        }
+    }
+}
+
+/// Metric types for performance monitoring - ADDED to fix PerformanceMonitor compilation
+enum MetricType: String, Codable, CaseIterable, Hashable {
+    case storageOperation = "storageOperation"
+    case networkRequest = "networkRequest"
+    case modelInference = "modelInference"
+    case encryptionOperation = "encryptionOperation"
+    case memoryUsage = "memoryUsage"
+    case cpuUsage = "cpuUsage"
+    case responseTime = "responseTime"
+    case accuracy = "accuracy"
+    
+    var displayName: String {
+        switch self {
+        case .storageOperation: return "Storage Operation"
+        case .networkRequest: return "Network Request"
+        case .modelInference: return "Model Inference"
+        case .encryptionOperation: return "Encryption Operation"
+        case .memoryUsage: return "Memory Usage"
+        case .cpuUsage: return "CPU Usage"
+        case .responseTime: return "Response Time"
+        case .accuracy: return "Accuracy"
+        }
+    }
+}
+
+/// Optimization types - ADDED to fix ThreadWebSettings compilation
+enum OptimizationType: String, Codable, CaseIterable, Hashable {
+    case enablePredictiveLoading = "enablePredictiveLoading"
+    case adjustQualitySpeedBalance = "adjustQualitySpeedBalance"
+    case optimizeEnsembleMode = "optimizeEnsembleMode"
+    case reduceLatency = "reduceLatency"
+    case improveAccuracy = "improveAccuracy"
+    case conserveBandwidth = "conserveBandwidth"
+    case optimizeMemory = "optimizeMemory"
+    case enhancePrivacy = "enhancePrivacy"
+    
+    var displayName: String {
+        switch self {
+        case .enablePredictiveLoading: return "Enable Predictive Loading"
+        case .adjustQualitySpeedBalance: return "Adjust Quality-Speed Balance"
+        case .optimizeEnsembleMode: return "Optimize Ensemble Mode"
+        case .reduceLatency: return "Reduce Latency"
+        case .improveAccuracy: return "Improve Accuracy"
+        case .conserveBandwidth: return "Conserve Bandwidth"
+        case .optimizeMemory: return "Optimize Memory"
+        case .enhancePrivacy: return "Enhance Privacy"
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .enablePredictiveLoading: return "Preload responses based on conversation patterns"
+        case .adjustQualitySpeedBalance: return "Balance response quality with speed requirements"
+        case .optimizeEnsembleMode: return "Optimize multiple model coordination"
+        case .reduceLatency: return "Minimize response time"
+        case .improveAccuracy: return "Enhance response accuracy"
+        case .conserveBandwidth: return "Reduce network usage"
+        case .optimizeMemory: return "Minimize memory footprint"
+        case .enhancePrivacy: return "Strengthen privacy protections"
+        }
+    }
+}
+
+/// Encryption purposes - ADDED to fix QuantumStorageManager compilation
+enum EncryptionPurpose: String, Codable, CaseIterable, Hashable {
+    case storage = "storage"
+    case communication = "communication"
+    case backup = "backup"
+    case temporaryData = "temporaryData"
+    case keyDerivation = "keyDerivation"
+    
+    var description: String {
+        switch self {
+        case .storage: return "Storage encryption for quantum memory management"
+        case .communication: return "End-to-end communication encryption"
+        case .backup: return "Backup data encryption"
+        case .temporaryData: return "Temporary data encryption"
+        case .keyDerivation: return "Key derivation encryption"
+        }
+    }
+}
+
+/// Encrypted data structure - ADDED to fix QuantumStorageManager compilation
+struct EncryptedData: Codable, Hashable {
+    let data: Data
+    let algorithm: String
+    let keyDerivation: String
+    let timestamp: Date
+    let checksum: String
+    let purpose: EncryptionPurpose
+    
+    init(data: Data, algorithm: String, keyDerivation: String, checksum: String, purpose: EncryptionPurpose = .storage) {
+        self.data = data
+        self.algorithm = algorithm
+        self.keyDerivation = keyDerivation
+        self.timestamp = Date()
+        self.checksum = checksum
+        self.purpose = purpose
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case data, algorithm, keyDerivation, timestamp, checksum, purpose
+    }
+}
+
+/// Compression algorithms - MODIFIED to add Sendable conformance
+enum CompressionAlgorithm: String, Codable, CaseIterable, Hashable, Sendable {
+    case lz4 = "lz4"
+    case zlib = "zlib"
+    case lzfse = "lzfse"
+    case lzma = "lzma"
+    
+    var displayName: String {
+        switch self {
+        case .lz4: return "LZ4"
+        case .zlib: return "ZLIB"
+        case .lzfse: return "LZFSE"
+        case .lzma: return "LZMA"
+        }
+    }
+    
+    var compressionRatio: Double {
+        switch self {
+        case .lz4: return 0.5
+        case .zlib: return 0.3
+        case .lzfse: return 0.25
+        case .lzma: return 0.2
+        }
+    }
+}
+
+/// Storage tiers - ADDED to fix QuantumStorageManager compilation
+enum StorageTier: String, Codable, CaseIterable, Hashable {
+    case hot = "hot"     // Frequently accessed
+    case warm = "warm"   // Occasionally accessed
+    case cool = "cool"   // Rarely accessed
+    case cold = "cold"   // Archive storage
+    
+    var displayName: String {
+        switch self {
+        case .hot: return "Hot Storage"
+        case .warm: return "Warm Storage"
+        case .cool: return "Cool Storage"
+        case .cold: return "Cold Storage"
+        }
+    }
+    
+    var accessTime: TimeInterval {
+        switch self {
+        case .hot: return 0.001      // 1ms
+        case .warm: return 0.01      // 10ms
+        case .cool: return 0.1       // 100ms
+        case .cold: return 1.0       // 1s
+        }
+    }
+}
+
+/// Content types - ADDED for ThreadWebSettings
+enum ContentType: String, Codable, CaseIterable, Hashable {
+    case text = "text"
+    case code = "code"
+    case image = "image"
+    case video = "video"
+    case audio = "audio"
+    case document = "document"
+    
+    var displayName: String {
+        return rawValue.capitalized
+    }
+}
+
 // MARK: - Global Constants
 
 /// Global constants used throughout the app
@@ -882,6 +1094,27 @@ enum LoadingState<T> {
         switch self {
         case .error(let error): return error
         default: return nil
+        }
+    }
+}
+
+/// Sidebar items for navigation - ADDED for MainView
+enum SidebarItem: String, CaseIterable, Hashable {
+    case workspaces = "workspaces"
+    case threads = "threads"
+    case performance = "performance"
+    case settings = "settings"
+    
+    var displayName: String {
+        return rawValue.capitalized
+    }
+    
+    var icon: String {
+        switch self {
+        case .workspaces: return "folder"
+        case .threads: return "message"
+        case .performance: return "chart.bar"
+        case .settings: return "gearshape"
         }
     }
 }

@@ -8,7 +8,6 @@ import Combine
 import OSLog
 
 @MainActor
-
 class UserSettings: ObservableObject {
     static let shared = UserSettings()
     
@@ -34,6 +33,12 @@ class UserSettings: ObservableObject {
     @Published var animationsEnabled: Bool = true
     @Published var showConfidenceScores: Bool = true
     @Published var compactMode: Bool = false
+    
+    // UI Display Settings - ADDED for MainView compatibility
+    @Published var showWelcomeTips: Bool = true
+    @Published var showDetailsPanel: Bool = true
+    @Published var showTimelineView: Bool = false
+    @Published var showPerformanceMetrics: Bool = false
     
     // Advanced Settings
     @Published var debugMode: Bool = false
@@ -94,6 +99,12 @@ class UserSettings: ObservableObject {
         showConfidenceScores = userDefaults.bool(forKey: "showConfidenceScores", defaultValue: true)
         compactMode = userDefaults.bool(forKey: "compactMode", defaultValue: false)
         
+        // UI Display Settings - ADDED
+        showWelcomeTips = userDefaults.bool(forKey: "showWelcomeTips", defaultValue: true)
+        showDetailsPanel = userDefaults.bool(forKey: "showDetailsPanel", defaultValue: true)
+        showTimelineView = userDefaults.bool(forKey: "showTimelineView", defaultValue: false)
+        showPerformanceMetrics = userDefaults.bool(forKey: "showPerformanceMetrics", defaultValue: false)
+        
         // Advanced Settings
         debugMode = userDefaults.bool(forKey: "debugMode", defaultValue: false)
         developerMode = userDefaults.bool(forKey: "developerMode", defaultValue: false)
@@ -123,6 +134,12 @@ class UserSettings: ObservableObject {
         userDefaults.set(showConfidenceScores, forKey: "showConfidenceScores")
         userDefaults.set(compactMode, forKey: "compactMode")
         
+        // UI Display Settings - ADDED
+        userDefaults.set(showWelcomeTips, forKey: "showWelcomeTips")
+        userDefaults.set(showDetailsPanel, forKey: "showDetailsPanel")
+        userDefaults.set(showTimelineView, forKey: "showTimelineView")
+        userDefaults.set(showPerformanceMetrics, forKey: "showPerformanceMetrics")
+        
         // Advanced Settings
         userDefaults.set(debugMode, forKey: "debugMode")
         userDefaults.set(developerMode, forKey: "developerMode")
@@ -131,15 +148,16 @@ class UserSettings: ObservableObject {
         logger.debug("Settings saved to UserDefaults")
     }
     
+    // MARK: - Reset Functions
+    
     func resetToDefaults() {
         logger.info("Resetting settings to defaults")
         
-        // Reset all settings
+        // Reset all settings to defaults
         webResearchEnabled = true
         communitySearchEnabled = true
         privacyLevel = .maximum
         searchEnginePreference = .automatic
-        customSearchEngines = SearchEngine.allCases
         searchCacheEnabled = true
         cacheStorageLimit = .standard50MB
         dataRetentionPeriod = .thirtyDays
@@ -148,6 +166,10 @@ class UserSettings: ObservableObject {
         animationsEnabled = true
         showConfidenceScores = true
         compactMode = false
+        showWelcomeTips = true
+        showDetailsPanel = true
+        showTimelineView = false
+        showPerformanceMetrics = false
         debugMode = false
         developerMode = false
         experimentalFeatures = false
@@ -155,33 +177,32 @@ class UserSettings: ObservableObject {
         saveSettings()
     }
     
-    // MARK: - Cache Management
-    
     func clearCache() {
-        // Clear various caches
-        logger.info("Clearing application caches")
+        logger.info("Clearing application cache")
+        // Implementation would clear application cache
+    }
+    
+    func exportSettings() -> Data? {
+        let settingsDict: [String: Any] = [
+            "webResearchEnabled": webResearchEnabled,
+            "communitySearchEnabled": communitySearchEnabled,
+            "privacyLevel": privacyLevel.rawValue,
+            "searchEnginePreference": searchEnginePreference.rawValue,
+            "searchCacheEnabled": searchCacheEnabled,
+            "cacheStorageLimit": cacheStorageLimit.rawValue,
+            "dataRetentionPeriod": dataRetentionPeriod.rawValue,
+            "performanceMode": performanceMode.rawValue,
+            "theme": theme.rawValue,
+            "animationsEnabled": animationsEnabled,
+            "showConfidenceScores": showConfidenceScores,
+            "compactMode": compactMode,
+            "showWelcomeTips": showWelcomeTips,
+            "showDetailsPanel": showDetailsPanel,
+            "showTimelineView": showTimelineView,
+            "showPerformanceMetrics": showPerformanceMetrics
+        ]
         
-        // This would clear actual caches in production
-        Task {
-            await clearSearchCache()
-            await clearResponseCache()
-            await clearTemporalCache()
-        }
-    }
-    
-    private func clearSearchCache() async {
-        // Clear search result cache
-        logger.debug("Cleared search cache")
-    }
-    
-    private func clearResponseCache() async {
-        // Clear AI response cache
-        logger.debug("Cleared response cache")
-    }
-    
-    private func clearTemporalCache() async {
-        // Clear temporal intelligence cache
-        logger.debug("Cleared temporal cache")
+        return try? JSONSerialization.data(withJSONObject: settingsDict, options: .prettyPrinted)
     }
     
     // MARK: - Theme Management
@@ -218,6 +239,10 @@ class UserSettings: ObservableObject {
             $animationsEnabled.eraseToAnyPublisher(),
             $showConfidenceScores.eraseToAnyPublisher(),
             $compactMode.eraseToAnyPublisher(),
+            $showWelcomeTips.eraseToAnyPublisher(),
+            $showDetailsPanel.eraseToAnyPublisher(),
+            $showTimelineView.eraseToAnyPublisher(),
+            $showPerformanceMetrics.eraseToAnyPublisher(),
             $debugMode.eraseToAnyPublisher(),
             $developerMode.eraseToAnyPublisher(),
             $experimentalFeatures.eraseToAnyPublisher()

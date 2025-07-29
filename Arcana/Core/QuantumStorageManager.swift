@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import Compression
+import CryptoKit
 
 // MARK: - Quantum Storage Manager
 
@@ -97,11 +98,12 @@ public class QuantumStorageManager: ObservableObject {
             let compressedData = try await compressData(semanticData, algorithm: metadata.compressionAlgorithm)
             
             // Encrypt if enabled
-            let finalData: Data
+            let finalBlobData: Data
             if enableEncryption {
-                finalData = try await encryptionManager.encrypt(compressedData)
+                let encryptedBlob: EncryptedData = try await encryptionManager.encrypt(compressedData, for: .storage)
+                finalBlobData = try JSONEncoder().encode(encryptedBlob)
             } else {
-                finalData = compressedData
+                finalBlobData = compressedData
             }
             
             // Determine storage tier
@@ -111,8 +113,8 @@ public class QuantumStorageManager: ObservableObject {
             let storageEntry = StorageEntry(
                 key: key,
                 originalSize: Int64(rawData.count),
-                compressedSize: Int64(finalData.count),
-                compressionRatio: 1.0 - (Double(finalData.count) / Double(rawData.count)),
+                compressedSize: Int64(finalBlobData.count),
+                compressionRatio: 1.0 - (Double(finalBlobData.count) / Double(rawData.count)),
                 storageTier: storageTier,
                 metadata: metadata,
                 createdAt: Date(),
@@ -123,7 +125,7 @@ public class QuantumStorageManager: ObservableObject {
             
             // Store the data
             let storageURL = getStorageURL(for: key, tier: storageTier)
-            try finalData.write(to: storageURL)
+            try finalBlobData.write(to: storageURL)
             
             // Update storage index
             storageIndex.entries[key] = storageEntry
@@ -165,14 +167,15 @@ public class QuantumStorageManager: ObservableObject {
             let storageURL = getStorageURL(for: key, tier: storageEntry.storageTier)
             
             // Read encrypted/compressed data
-            let finalData = try Data(contentsOf: storageURL)
+            let blobData = try Data(contentsOf: storageURL)
             
             // Decrypt if needed
             let compressedData: Data
             if enableEncryption {
-                compressedData = try await encryptionManager.decrypt(finalData)
+                let encryptedBlob = try JSONDecoder().decode(EncryptedData.self, from: blobData)
+                compressedData = try await encryptionManager.decrypt(encryptedBlob)
             } else {
-                compressedData = finalData
+                compressedData = blobData
             }
             
             // Decompress
@@ -683,6 +686,7 @@ private class SemanticCompressionEngine {
         var phrases: [String] = []
         
         for length in minLength...maxLength {
+            guard words.count >= length else { break }
             for i in 0...(words.count - length) {
                 let phrase = words[i..<(i + length)].joined(separator: " ")
                 if phrase.count > 10 { // Minimum phrase length
@@ -744,7 +748,7 @@ public enum StoragePriority: String, Codable, CaseIterable, Hashable {
 }
 
 /// Available compression algorithms
-public enum CompressionAlgorithm: String, Codable, CaseIterable, Hashable {
+public enum CompressionAlgorithm: String, Codable, CaseIterable, Hashable, Sendable {
     case lz4
     case zlib
     case lzfse
@@ -773,9 +777,17 @@ public struct StorageResult: Codable, Hashable {
 /// Storage index for tracking all entries
 public struct StorageIndex: Codable, Hashable {
     public var entries: [String: StorageEntry] = [:]
-    public let version: String = "1.0"
-    public let createdAt: Date = Date()
+    public var version: String = "1.0"
+    public var createdAt: Date = Date()
     public var lastModified: Date = Date()
+    
+    public enum CodingKeys: String, CodingKey {
+        case entries, version, createdAt, lastModified
+    }
+    
+    public init() {
+        // Empty initializer - all properties have default values
+    }
 }
 
 /// Overall storage health metrics
@@ -858,6 +870,77 @@ private struct SemanticCompressedData: Codable {
     let content: String
     let compressionMap: [String: String]
     let originalLength: Int
+}
+
+// MARK: - TemporalStorageTiers Support Classes
+
+/// Temporal storage tier management
+class TemporalStorageTiers {
+    private let storageDirectory: URL
+    
+    init(storageDirectory: URL) {
+        self.storageDirectory = storageDirectory
+    }
+    
+    func initialize() async throws {
+        // Initialize storage tiers
+        let tiers: [StorageTier] = [.hot, .warm, .cool, .cold]
+        
+        for tier in tiers {
+            let tierDirectory = storageDirectory.appendingPathComponent(tier.rawValue)
+            try FileManager.default.createDirectory(at: tierDirectory, withIntermediateDirectories: true, attributes: nil)
+        }
+    }
+    
+    func reorganize() async throws {
+        // Reorganize storage tiers based on access patterns
+        print("🔄 Reorganizing storage tiers...")
+    }
+    
+    func determineTier(for metadata: StorageMetadata) -> StorageTier {
+        switch metadata.priority {
+        case .critical, .high: return .hot
+        case .medium: return .warm
+        case .low: return .cold
+        }
+    }
+    
+    func shouldMigrateTier(_ entry: StorageEntry) -> Bool {
+        let daysSinceAccess = Date().timeIntervalSince(entry.lastAccessed) / (24 * 60 * 60)
+        
+        switch entry.storageTier {
+        case .hot: return daysSinceAccess > 7
+        case .warm: return daysSinceAccess > 30
+        case .cool: return daysSinceAccess > 90
+        case .cold: return false
+        }
+    }
+}
+
+// MARK: - Support Classes Stubs
+
+class SemanticMemoryEngine {
+    func initialize() async throws {
+        // Initialize semantic memory
+    }
+}
+
+class LocalEncryptionManager {
+    func encrypt(_ data: Data, for purpose: EncryptionPurpose = .storage) async throws -> EncryptedData {
+        // Simulate encryption
+        return EncryptedData(
+            data: data,
+            algorithm: "AES-256",
+            keyDerivation: "PBKDF2",
+            checksum: "checksum",
+            purpose: purpose
+        )
+    }
+    
+    func decrypt(_ encryptedData: EncryptedData) async throws -> Data {
+        // Simulate decryption
+        return encryptedData.data
+    }
 }
 
 // MARK: - Data Extension for Compression

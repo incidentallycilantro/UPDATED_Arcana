@@ -82,6 +82,48 @@ class WorkspaceManager: ObservableObject {
         return newWorkspace
     }
     
+    // MARK: - Additional Methods for MainView Compatibility
+    
+    /// Create workspace with synchronous interface for MainView (compatibility method)
+    func createWorkspace(name: String, type: WorkspaceType, description: String = "") -> Project {
+        logger.info("Creating workspace (sync): \(name)")
+        
+        let workspace = Project(
+            name: name,
+            description: description,
+            workspaceType: type,
+            settings: ProjectSettings(
+                enableWebResearch: type == .research,
+                privacyLevel: .maximum
+            )
+        )
+        
+        // Add to array immediately for UI responsiveness
+        workspaces.append(workspace)
+        workspaces.sort { $0.updatedAt > $1.updatedAt }
+        
+        // Save asynchronously
+        Task {
+            do {
+                try await persistenceController.saveWorkspace(workspace)
+                logger.info("Workspace saved: \(workspace.displayName)")
+            } catch {
+                logger.error("Failed to save workspace: \(error.localizedDescription)")
+                // Remove from array if save failed
+                await MainActor.run {
+                    self.workspaces.removeAll { $0.id == workspace.id }
+                }
+            }
+        }
+        
+        return workspace
+    }
+    
+    /// Get workspace by ID (utility method)
+    func getWorkspaceById(_ id: UUID) -> Project? {
+        return workspaces.first { $0.id == id }
+    }
+    
     func updateWorkspace(_ workspace: Project) async throws {
         logger.debug("Updating workspace: \(workspace.name)")
         
@@ -103,8 +145,7 @@ class WorkspaceManager: ObservableObject {
         logger.info("Deleting workspace: \(workspace.name)")
         
         // Mark as deleted in persistence
-        var deletedWorkspace = workspace
-        try await persistenceController.deleteWorkspace(deletedWorkspace.id)
+        try await persistenceController.deleteWorkspace(workspace.id)
         
         await MainActor.run {
             self.workspaces.removeAll { $0.id == workspace.id }

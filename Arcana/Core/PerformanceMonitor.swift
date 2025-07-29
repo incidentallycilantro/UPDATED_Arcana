@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 import OSLog
 
 @MainActor
@@ -14,9 +16,15 @@ class PerformanceMonitor: ObservableObject {
     @Published var currentMetrics = PerformanceMetrics()
     @Published var historicalData: [PerformanceSnapshot] = []
     @Published var alerts: [PerformanceAlert] = []
-    @Published public var systemHealth: SystemHealth
+    @Published public var systemHealth: SystemHealth = .good
     
     private var monitoringTimer: Timer?
+    
+    // ADDED: Public initializer to fix compilation error
+    public init() {
+        self.systemHealth = .good
+        logger.info("PerformanceMonitor initialized")
+    }
     
     func startMonitoring() {
         logger.info("Starting performance monitoring...")
@@ -32,6 +40,27 @@ class PerformanceMonitor: ObservableObject {
         monitoringTimer?.invalidate()
         monitoringTimer = nil
         logger.info("Performance monitoring stopped")
+    }
+    
+    // ADDED: recordMetric method to fix QuantumStorageManager compilation
+    func recordMetric(_ type: MetricType, value: Double, context: [String: String] = [:]) async {
+        logger.debug("Recording metric: \(type.displayName) = \(value)")
+        
+        // Record the metric in our historical data
+        let snapshot = PerformanceSnapshot(
+            timestamp: Date(),
+            metrics: currentMetrics
+        )
+        
+        historicalData.append(snapshot)
+        
+        // Keep only last 100 snapshots
+        if historicalData.count > 100 {
+            historicalData.removeFirst()
+        }
+        
+        // Update system health based on metrics
+        await updateSystemHealth()
     }
     
     func collectMetrics() async {
@@ -61,6 +90,36 @@ class PerformanceMonitor: ObservableObject {
         
         // Check for performance alerts
         checkForAlerts(metrics)
+        
+        // Update system health
+        await updateSystemHealth()
+    }
+    
+    private func updateSystemHealth() async {
+        let cpuScore = 1.0 - currentMetrics.cpuUsage // Lower CPU usage is better
+        let memoryScore = 1.0 - min(1.0, Double(currentMetrics.memoryUsage) / 8_000_000_000) // Normalize to 8GB
+        let inferenceScore = max(0.0, 1.0 - (currentMetrics.inferenceTime / 5.0)) // Target under 5s
+        
+        let overallScore = (cpuScore * 0.4) + (memoryScore * 0.3) + (inferenceScore * 0.3)
+        
+        let newHealth: SystemHealth
+        switch overallScore {
+        case 0.9...1.0:
+            newHealth = .excellent
+        case 0.7..<0.9:
+            newHealth = .good
+        case 0.5..<0.7:
+            newHealth = .fair
+        case 0.3..<0.5:
+            newHealth = .poor
+        default:
+            newHealth = .critical
+        }
+        
+        if newHealth != systemHealth {
+            systemHealth = newHealth
+            logger.info("System health updated to: \(newHealth.displayName)")
+        }
     }
     
     private func getCurrentCPUUsage() -> Double {

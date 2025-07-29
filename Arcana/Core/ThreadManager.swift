@@ -75,6 +75,33 @@ class ThreadManager: ObservableObject {
         return newThread
     }
     
+    // MARK: - Additional Methods for MainView Compatibility
+    
+    /// Create a new thread for a specific workspace (MainView compatibility method)
+    func createThread(in workspace: Project) async throws -> ChatThread {
+        logger.info("Creating thread in workspace: \(workspace.displayName)")
+        
+        let newThread = ChatThread(
+            title: "New Thread",
+            workspaceId: workspace.id,
+            workspaceType: workspace.workspaceType,
+            metadata: ThreadMetadata(
+                priority: .normal,
+                complexity: .medium,
+                privacy: .standard
+            )
+        )
+        
+        try await persistenceController.saveThread(newThread)
+        
+        await MainActor.run {
+            self.threads.append(newThread)
+            self.currentThread = newThread
+        }
+        
+        return newThread
+    }
+    
     func addMessage(to threadId: UUID, message: ChatMessage) async throws {
         logger.debug("Adding message to thread: \(threadId)")
         
